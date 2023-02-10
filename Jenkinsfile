@@ -24,10 +24,11 @@ pipeline
                 script {
                        sshagent(credentials:['ssh_connect']){
                       sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.235.128.124'
+                      sh 'touch ~/hello'
                      // sh """
                 // docker run -d  khachik01/test-image:${env.BUILD_ID}
                 // """
-                        sshCommand remote: remote, command: "docker run -tid -p 80:80 khachik01/test-image:30"
+                       
                 }
             }
             }
