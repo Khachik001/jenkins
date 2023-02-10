@@ -22,7 +22,7 @@ pipeline
         stage('login server'){
             steps{
                 
-                sshagent(credentials:['ubuntu']){
+                sshagent(credentials:['ssh_connect']){
                 sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@ec2-3-236-204-86.compute-1.amazonaws.com uptime "whoami"'
                 
             }
