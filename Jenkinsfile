@@ -12,7 +12,7 @@ pipeline
         stage('Push image') {
             steps{
                 script{
-                    withDockerRegistry([ credentialsId: "Khachik01", url: "https://hub.docker.com/repository/docker/khachik01/aca_homework/general" ]) {
+                    withDockerRegistry([ credentialsId: "dockerhub", url: "https://hub.docker.com/repository/docker/khachik01/aca_homework/general" ]) {
                     customImage.push()
                 }
             }
