@@ -19,13 +19,15 @@ pipeline
             }
         }
     }
-    stage('login server'){
-         steps{
-            sshagent(credentials:['ubuntu']){
-               sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86 uptime "whoami"'
-          }
-        echo "success login"
-         }
-       }    
+        stage('login server'){
+            steps{
+                script{
+                sshagent(credentials:['ubuntu']){
+                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86 uptime "whoami"'
+                }
+            }
+            // echo "success login"
+            }
+        }    
     }
 }
