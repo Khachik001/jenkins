@@ -10,7 +10,7 @@ pipeline
             }
         }
         stage('Push image') {
-        withDockerRegistry([ credentialsId: "dockerhubaccount", url: "https://hub.docker.com/repository/docker/khachik01/aca_homework/general" ]) {
+        withDockerRegistry([ credentialsId: "Khachi01", url: "https://hub.docker.com/repository/docker/khachik01/aca_homework/general" ]) {
         dockerImage.push()
         }
     }    
