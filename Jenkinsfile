@@ -1,3 +1,4 @@
+def customImage
 pipeline
 {
     agent any
@@ -5,7 +6,7 @@ pipeline
         stage('build step'){
             steps{
                 script {
-                    def customImage = docker.build("khachik01/test-image:${env.BUILD_ID}","-f nginx/Dockerfile .")
+                     customImage = docker.build("khachik01/test-image:${env.BUILD_ID}","-f nginx/Dockerfile .")
                 }
             }
         }
