@@ -28,7 +28,7 @@ pipeline
                 // docker run -d  khachik01/test-image:${env.BUILD_ID}
                 // """
             }
-            touch ~/hello
+            sh 'touch ~/hello'
             }
         }    
     }
