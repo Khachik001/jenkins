@@ -5,14 +5,14 @@ pipeline
         stage('build step'){
             steps{
                 script {
-                    def customImage = docker.build("test-image:${env.BUILD_ID}","-f nginx/Dockerfile .")
+                    def customImage = docker.build("khachik01/test-image:${env.BUILD_ID}","-f nginx/Dockerfile .")
                 }
             }
         }
         stage('Push image') {
             steps{
                 script{
-                    withDockerRegistry([ credentialsId: "dockerhub", url: "https://hub.docker.com/repository/docker/khachik01/aca_homework/general" ]) {
+                    withDockerRegistry([ credentialsId: "dockerhub", url: "https://hub.docker.com/repository/docker/khachik01/test-image/" ]) {
                     customImage.push()
                 }
             }
