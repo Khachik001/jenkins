@@ -23,7 +23,7 @@ pipeline
             steps{
                 
                 sshagent(credentials:['ssh_connect']){
-                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@ec2-3-236-204-86.compute-1.amazonaws.com uptime "whoami"'
+                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86 uptime "whoami"'
                 
             }
              echo "success login"
