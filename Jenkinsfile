@@ -21,12 +21,12 @@ pipeline
     }
         stage('login server'){
             steps{
-                script{
+                
                 sshagent(credentials:['ubuntu']){
-                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86 uptime "whoami"'
-                }
+                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@ec2-3-236-204-86.compute-1.amazonaws.com uptime "whoami"'
+                
             }
-            // echo "success login"
+             echo "success login"
             }
         }    
     }
