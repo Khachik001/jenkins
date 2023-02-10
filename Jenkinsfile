@@ -22,7 +22,7 @@ pipeline
         stage('login server'){
             steps{
                        sshagent(credentials:['ssh_connect']){
-                      sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.235.128.124 touch ~/hello'
+                      sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.235.128.124'
                       
                      // sh """
                 // docker run -d  khachik01/test-image:${env.BUILD_ID}
