@@ -24,8 +24,7 @@ pipeline
                 
                 sshagent(credentials:['ssh_connect']){
                 sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86'
-                sh 'docker ps'
-                
+                sh 'docker push khachik01/test-image:${env.BUILD_ID}'
             }
             }
         }    
