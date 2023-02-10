@@ -27,7 +27,7 @@ pipeline
                      // sh """
                 // docker run -d  khachik01/test-image:${env.BUILD_ID}
                 // """
-                        sshCommand remote; remote, command: "docker run -tid -p 80:80 khachik01/test-image:${env.BUILD_ID}"
+                        sshCommand remote: remote, command: "docker run -tid -p 80:80 khachik01/test-image:${env.BUILD_ID}"
                 }
             }
             }
