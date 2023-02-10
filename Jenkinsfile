@@ -24,9 +24,9 @@ pipeline
                 
                 sshagent(credentials:['ssh_connect']){
                 sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86'
+                sh 'docker ps'
                 
             }
-             docker ps
             }
         }    
     }
