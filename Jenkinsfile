@@ -26,7 +26,7 @@ pipeline
                 sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86'
                 
             }
-             echo "success login"
+             docker ps
             }
         }    
     }
