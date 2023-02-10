@@ -23,8 +23,8 @@ pipeline
             steps{
                 
                 sshagent(credentials:['ssh_connect']){
-                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.236.204.86'
-                sh 'docker push khachik01/test-image:${env.BUILD_ID}'
+                sh 'ssh  -o StrictHostKeyChecking=no  ubuntu@3.235.128.124'
+                sh 'docker run khachik01/test-image:${env.BUILD_ID}'
             }
             }
         }    
